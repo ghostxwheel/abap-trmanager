@@ -1,7 +1,8 @@
 # abap-trmanager
 SAP Alternative Transport Manager (similar to SE01/SE09)
 
-Available functions:
+Features:
+  - ALV based UI (sorted list, not tree)
   - Mass transport download to ZIP file
   - Mass transport upload from ZIP file
   - Mass transport release
