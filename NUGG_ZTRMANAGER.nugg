@@ -1,0 +1,1686 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nugget name="ZTRMANAGER">
+ <PROG NAME="ZTRMANAGER" VARCL="X" SUBC="1" RMAND="800" RLOAD="E" FIXPT="X" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="I" KEY="F4A" ENTRY="Since Yesterday" LENGTH="23 "/>
+    <textElement ID="I" KEY="F4B" ENTRY="From Last 2 Weeks" LENGTH="23 "/>
+    <textElement ID="I" KEY="F4C" ENTRY="From Last 4 Weeks" LENGTH="23 "/>
+    <textElement ID="I" KEY="F4D" ENTRY="- Select a Date" LENGTH="23 "/>
+    <textElement ID="I" KEY="M01" ENTRY="Date is in the future" LENGTH="21 "/>
+    <textElement ID="R" ENTRY="Change request management" LENGTH="25 "/>
+   </language>
+  </textPool>
+  <dynpros>
+   <dynpro PROG="ZTRMANAGER" DNUM="0010" FNUM="0010" BZMX="14 " BZBR="84 " MILI="192 " MICO="37 " MALI="0 " MACO="0 " NOLI="16 " NOCO="93 " VALP="0 " CUAN="G" SPRA="E" DTEXT="Select Transports">
+    <dynprofield FNAM="TRDYSE01CM-SEL_USER" DIDX="0000" FLG1="00" FLG2="00" FLG3="00" FMB1="30" FMB2="00" LENG="0F" LINE="01" COLN="02" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" ITYP="2" AGLT="00" ADEZ="00" STXT="User" RES1="                                                                                                                                                                                                                                                        X"/>
+    <dynprofield FNAM="TRDYSE01CM-USERNAME" DIDX="0000" FLG1="A0" FLG2="00" FLG3="80" FMB1="00" FMB2="08" LENG="0C" LINE="01" COLN="12" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" ITYP="C" AGLT="18" ADEZ="00" STXT="____________" RES1="X                                      00"/>
+    <dynprofield FNAM="%_AUTOTEXT052" DIDX="0006" FLG1="00" FLG2="00" FLG3="00" FILL="R" FMB1="30" FMB2="00" LENG="2A" LINE="03" COLN="02" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AUTH="101" AGLT="00" ADEZ="00" STXT="Request Type"/>
+    <dynprofield FNAM="TABSTRIP_CONTAINER" DIDX="0007" FLG1="00" FLG2="00" FLG3="00" FILL="B" FMB1="30" FMB2="00" LENG="29" LINE="03" COLN="2D" LANF="00" LBLK="00" LREP="00" AUTH="102" AGLT="06" ADEZ="1C"/>
+    <dynprofield FNAM="TRDYSE01CM-REQ_CUST" DIDX="0000" FLG1="A0" FLG2="00" FLG3="80" FILL="C" FMB1="00" FMB2="00" LENG="01" LINE="04" COLN="03" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AUTH="103" ITYP="C" AGLT="02" ADEZ="00" STXT="_" RES1="                                       00"/>
+    <dynprofield FNAM="TRDYSE01CM-REQ_CUST" DIDX="0000" FLG1="30" FLG2="00" FLG3="00" FILL="C" FMB1="30" FMB2="00" LENG="19" LINE="04" COLN="05" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AUTH="103" ITYP="3" AGLT="00" ADEZ="00" STXT="Customizing Requests"/>
+    <dynprofield FNAM="TRDYSE01CM-REQ_WB" DIDX="0000" FLG1="A0" FLG2="00" FLG3="80" FILL="C" FMB1="00" FMB2="00" LENG="01" LINE="05" COLN="03" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AUTH="104" ITYP="C" AGLT="02" ADEZ="00" STXT="_" RES1="                                       00"/>
+    <dynprofield FNAM="TRDYSE01CM-REQ_WB" DIDX="0000" FLG1="30" FLG2="00" FLG3="00" FILL="C" FMB1="30" FMB2="00" LENG="19" LINE="05" COLN="05" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AUTH="104" ITYP="3" AGLT="00" ADEZ="00" STXT="Workbench Requests"/>
+    <dynprofield FNAM="TRDYSE01CM-REQ_COP" DIDX="0000" FLG1="A0" FLG2="00" FLG3="80" FILL="C" FMB1="00" FMB2="00" LENG="01" LINE="06" COLN="03" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AUTH="105" ITYP="C" AGLT="02" ADEZ="00" STXT="_" RES1="                                       00"/>
+    <dynprofield FNAM="TRDYSE01CM-REQ_COP" DIDX="0000" FLG1="30" FLG2="00" FLG3="00" FILL="C" FMB1="30" FMB2="00" LENG="19" LINE="06" COLN="05" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AUTH="105" ITYP="3" AGLT="00" ADEZ="00" STXT="Transport of Copies"/>
+    <dynprofield FNAM="TRDYSE01CM-REQ_MOVE" DIDX="0000" FLG1="A0" FLG2="00" FLG3="80" FILL="C" FMB1="00" FMB2="00" LENG="01" LINE="07" COLN="03" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AUTH="106" ITYP="C" AGLT="02" ADEZ="00" STXT="_" RES1="                                       00"/>
+    <dynprofield FNAM="TRDYSE01CM-REQ_MOVE" DIDX="0000" FLG1="30" FLG2="00" FLG3="00" FILL="C" FMB1="30" FMB2="00" LENG="19" LINE="07" COLN="05" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AUTH="106" ITYP="3" AGLT="00" ADEZ="00" STXT="Relocations"/>
+    <dynprofield FNAM="%_AUTOTEXT045" DIDX="0004" FLG1="00" FLG2="00" FLG3="00" FILL="R" FMB1="30" FMB2="00" LENG="2A" LINE="09" COLN="02" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AUTH="107" AGLT="00" ADEZ="00" STXT="Request Status"/>
+    <dynprofield FNAM="TRDYSE01CM-SEL_CHAN" DIDX="0000" FLG1="A0" FLG2="00" FLG3="80" FILL="C" FMB1="00" FMB2="00" LENG="01" LINE="0A" COLN="03" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AUTH="108" ITYP="C" AGLT="02" ADEZ="00" STXT="_" RES1="                                       00"/>
+    <dynprofield FNAM="TRDYSE01CM-SEL_CHAN" DIDX="0000" FLG1="30" FLG2="00" FLG3="00" FILL="C" FMB1="30" FMB2="00" LENG="0F" LINE="0A" COLN="05" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AUTH="108" ITYP="2" AGLT="00" ADEZ="00" STXT="Modifiable"/>
+    <dynprofield FNAM="TRDYSE01CM-SEL_RELE" DIDX="0000" FLG1="A0" FLG2="00" FLG3="80" FILL="C" FMB1="00" FMB2="00" LENG="01" LINE="0B" COLN="03" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AUTH="109" ITYP="C" AGLT="02" ADEZ="00" STXT="_" RES1="                                       00                                                                                                                               CHECKBOX"/>
+    <dynprofield FNAM="TRDYSE01CM-SEL_RELE" DIDX="0000" FLG1="30" FLG2="00" FLG3="00" FILL="C" FMB1="30" FMB2="00" LENG="0F" LINE="0B" COLN="05" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AUTH="109" ITYP="2" AGLT="00" ADEZ="00" STXT="Released"/>
+    <dynprofield FNAM="GV_DATSELTEXT" DIDX="0000" FLG1="80" FLG2="02" FLG3="80" FMB1="00" FMB2="08" LENG="16" LINE="0B" COLN="15" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" GRP1="ONE" ITYP="C" AGLT="08" ADEZ="00" STXT="______________________" RES1=" DL                                                                                                                                                                     DATESEL"/>
+    <dynprofield FNAM="%_AUTOTEXT028" DIDX="0013" FLG1="00" FLG2="00" FLG3="00" FILL="P" FMB1="30" FMB2="00" LENG="27" LINE="0E" COLN="02" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AUTH="110" ITYP="0" AGLT="00" ADEZ="00" STXT="@3M\QDisplay@_Display_________" RES1="                                                                                                                                                                        CONTINUE"/>
+    <dynprofield FNAM="GV_OKCODE" DIDX="0000" FLG1="80" FLG2="10" FLG3="00" FMB1="00" FMB2="00" LENG="14" LINE="FF" COLN="01" LTYP="O" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AGLT="00" ADEZ="00" STXT="____________________" RES1="                                       00"/>
+    <dynproflowsource>PROCESS BEFORE OUTPUT.
+
+  MODULE init_screen_0010.
+  MODULE set_screen_0010.
+
+*----------------------------------------------------------------------*
+PROCESS AFTER INPUT.
+
+  FIELD     trdyse01cm-username
+            MODULE           check_username.
+
+  CHAIN.
+    FIELD: trdyse01cm-req_cust,
+           trdyse01cm-req_wb,
+           trdyse01cm-req_cop,
+           trdyse01cm-req_move.
+
+    MODULE           check_types_trans.
+  ENDCHAIN.
+
+  CHAIN.
+    FIELD: trdyse01cm-sel_chan,
+           trdyse01cm-sel_rele.
+
+    MODULE           check_status_trans.
+  ENDCHAIN.
+
+  CHAIN.
+    FIELD: trdyse01cm-sel_rele,
+           gv_datseltext.
+
+    MODULE           check_date_trans.
+  ENDCHAIN.
+
+  MODULE user_command_0010.
+
+**--------------------------------------------------------------------**
+PROCESS ON VALUE-REQUEST.
+  FIELD gv_datseltext MODULE date_help_0010.</dynproflowsource>
+   </dynpro>
+   <dynpro PROG="ZTRMANAGER" DNUM="0100" FNUM="0100" BZMX="27 " BZBR="119 " MILI="192 " MICO="37 " MALI="0 " MACO="0 " NOLI="27 " NOCO="120 " VALP="0 " CUAN="G" SPRA="E" DTEXT="Test">
+    <dynprofield FNAM="SALV_TABLE" DIDX="001B" FLG1="00" FLG2="00" FLG3="00" FILL="U" FMB1="30" FMB2="00" LENG="77" LINE="01" COLN="02" LANF="00" LBLK="00" LREP="00" AUTH="101" AGLT="01" ADEZ="01"/>
+    <dynprofield FNAM="GV_OKCODE" DIDX="0000" FLG1="80" FLG2="10" FLG3="00" FMB1="00" FMB2="00" LENG="14" LINE="FF" COLN="01" LTYP="O" LANF="00" LBLK="00" LREP="00" TYPE="CHAR" AGLT="00" ADEZ="00" STXT="____________________"/>
+    <dynproflowsource>PROCESS BEFORE OUTPUT.
+  MODULE status_0100.
+
+PROCESS AFTER INPUT.
+  MODULE user_command_0100.</dynproflowsource>
+   </dynpro>
+  </dynpros>
+  <pfstatus>
+   <pfstatus_sta CODE="S0010" MODAL="D" ACTCODE="000001" PFKCODE="000001" BUTCODE="0001" INT_NOTE="Test"/>
+   <pfstatus_sta CODE="S0100" MODAL="D" ACTCODE="000001" PFKCODE="000001" BUTCODE="0001" INT_NOTE="Test"/>
+   <pfstatus_fun CODE="%EX" TEXTNO="001" TEXT_TYPE="S" FUN_TEXT="Exit" PATH="X"/>
+   <pfstatus_fun CODE="%PC" TEXTNO="001" TEXT_TYPE="S" FUN_TEXT="File..." PATH="F"/>
+   <pfstatus_fun CODE="%PRI" TEXTNO="001" TEXT_TYPE="S" TEXT_NAME="ICON_PRINT" ICON_ID="@0X@" FUN_TEXT="Print"/>
+   <pfstatus_fun CODE="%SC" TEXTNO="001" TEXT_TYPE="S" TEXT_NAME="ICON_SEARCH" ICON_ID="@13@" FUN_TEXT="Find..." PATH="F"/>
+   <pfstatus_fun CODE="%SC" TEXTNO="002" TEXT_TYPE="S" TEXT_NAME="ICON_SEARCH" ICON_ID="@13@" FUN_TEXT="Find" PATH="S"/>
+   <pfstatus_fun CODE="%SC+" TEXTNO="001" TEXT_TYPE="S" TEXT_NAME="ICON_SEARCH_NEXT" ICON_ID="@4E@" FUN_TEXT="Find next" PATH="X"/>
+   <pfstatus_fun CODE="%SL" TEXTNO="001" TEXT_TYPE="S" FUN_TEXT="Office" PATH="E"/>
+   <pfstatus_fun CODE="%ST" TEXTNO="001" TEXT_TYPE="S" FUN_TEXT="Report tree" PATH="R"/>
+   <pfstatus_fun CODE="BACK" TEXTNO="001" TEXT_TYPE="S" TEXT_NAME="ICON_OKAY" ICON_ID="@0V@" FUN_TEXT="Back" PATH="B"/>
+   <pfstatus_fun CODE="CONTINUE" TEXTNO="001" TEXT_TYPE="S" FUN_TEXT="Continue"/>
+   <pfstatus_fun CODE="P+" TEXTNO="001" TEXT_TYPE="S" FUN_TEXT="Next page"/>
+   <pfstatus_fun CODE="P++" TEXTNO="001" TEXT_TYPE="S" FUN_TEXT="Last Page"/>
+   <pfstatus_fun CODE="P-" TEXTNO="001" TEXT_TYPE="S" FUN_TEXT="Previous Page"/>
+   <pfstatus_fun CODE="P--" TEXTNO="001" TEXT_TYPE="S" FUN_TEXT="First Page"/>
+   <pfstatus_fun CODE="PICK" TEXTNO="001" TEXT_TYPE="S" TEXT_NAME="ICON_SELECT_DETAIL" ICON_ID="@16@" FUN_TEXT="Choose" PATH="S"/>
+   <pfstatus_fun CODE="PRI" TEXTNO="001" TEXT_TYPE="S" TEXT_NAME="ICON_PRINT" ICON_ID="@0X@" FUN_TEXT="Print" PATH="P"/>
+   <pfstatus_fun CODE="RW" TEXTNO="001" TEXT_TYPE="S" TEXT_NAME="ICON_CANCEL" ICON_ID="@0W@" FUN_TEXT="Cancel" PATH="A"/>
+   <pfstatus_men CODE="000001" NO="01" REF_TYPE="F" REF_CODE="PRI" REF_NO="001"/>
+   <pfstatus_men CODE="000001" NO="02" REF_TYPE="M" REF_CODE="000002"/>
+   <pfstatus_men CODE="000001" NO="03" REF_TYPE="F" REF_CODE="%EX" REF_NO="001"/>
+   <pfstatus_men CODE="000002" NO="01" REF_TYPE="F" REF_CODE="%SL" REF_NO="001"/>
+   <pfstatus_men CODE="000002" NO="02" REF_TYPE="F" REF_CODE="%ST" REF_NO="001"/>
+   <pfstatus_men CODE="000002" NO="03" REF_TYPE="F" REF_CODE="%PC" REF_NO="001"/>
+   <pfstatus_men CODE="000003" NO="01" REF_TYPE="F" REF_CODE="PICK" REF_NO="001"/>
+   <pfstatus_men CODE="000003" NO="02" REF_TYPE="F" REF_CODE="%SC" REF_NO="001"/>
+   <pfstatus_men CODE="000003" NO="03" REF_TYPE="F" REF_CODE="%SC+" REF_NO="001"/>
+   <pfstatus_men CODE="000003" NO="04" REF_TYPE="F" REF_CODE="RW" REF_NO="001"/>
+   <pfstatus_men CODE="000004" NO="01" REF_TYPE="F" REF_CODE="BACK" REF_NO="001"/>
+   <pfstatus_mtx CODE="000001" TEXT_TYPE="S" TEXT="List" PATH="L"/>
+   <pfstatus_mtx CODE="000002" TEXT_TYPE="S" TEXT="Save/Send" PATH="S"/>
+   <pfstatus_mtx CODE="000003" TEXT_TYPE="S" TEXT="Edit" PATH="E"/>
+   <pfstatus_mtx CODE="000004" TEXT_TYPE="S" TEXT="Goto" PATH="G"/>
+   <pfstatus_act CODE="000001" NO="01" MENUCODE="000001"/>
+   <pfstatus_act CODE="000001" NO="02" MENUCODE="000003"/>
+   <pfstatus_act CODE="000001" NO="03" MENUCODE="000004"/>
+   <pfstatus_pfk CODE="000001" PFNO="00" FUNCODE="CONTINUE" FUNNO="001"/>
+   <pfstatus_pfk CODE="000001" PFNO="02" FUNCODE="PICK" FUNNO="001"/>
+   <pfstatus_pfk CODE="000001" PFNO="03" FUNCODE="BACK" FUNNO="001"/>
+   <pfstatus_pfk CODE="000001" PFNO="12" FUNCODE="RW" FUNNO="001"/>
+   <pfstatus_pfk CODE="000001" PFNO="15" FUNCODE="%EX" FUNNO="001"/>
+   <pfstatus_pfk CODE="000001" PFNO="71" FUNCODE="%SC" FUNNO="002"/>
+   <pfstatus_pfk CODE="000001" PFNO="80" FUNCODE="P--" FUNNO="001"/>
+   <pfstatus_pfk CODE="000001" PFNO="81" FUNCODE="P-" FUNNO="001"/>
+   <pfstatus_pfk CODE="000001" PFNO="82" FUNCODE="P+" FUNNO="001"/>
+   <pfstatus_pfk CODE="000001" PFNO="83" FUNCODE="P++" FUNNO="001"/>
+   <pfstatus_pfk CODE="000001" PFNO="84" FUNCODE="%SC+" FUNNO="001"/>
+   <pfstatus_pfk CODE="000001" PFNO="86" FUNCODE="%PRI" FUNNO="001"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="%EX"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="%PC"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="%PRI"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="%PRN"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="%SC"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="%SC+"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="%SL"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="%ST"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="BACK"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="CONTINUE"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="P+"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="P++"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="P-"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="P--"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="PICK"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="PRI"/>
+   <pfstatus_set STATUS="S0010" FUNCTION="RW"/>
+   <pfstatus_set STATUS="S0100" FUNCTION="%EX"/>
+   <pfstatus_set STATUS="S0100" FUNCTION="%PC"/>
+   <pfstatus_set STATUS="S0100" FUNCTION="%PRI"/>
+   <pfstatus_set STATUS="S0100" FUNCTION="%PRN"/>
+   <pfstatus_set STATUS="S0100" FUNCTION="%SC"/>
+   <pfstatus_set STATUS="S0100" FUNCTION="%SC+"/>
+   <pfstatus_set STATUS="S0100" FUNCTION="%SL"/>
+   <pfstatus_set STATUS="S0100" FUNCTION="%ST"/>
+   <pfstatus_set STATUS="S0100" FUNCTION="BACK"/>
+   <pfstatus_set STATUS="S0100" FUNCTION="P+"/>
+   <pfstatus_set STATUS="S0100" FUNCTION="P++"/>
+   <pfstatus_set STATUS="S0100" FUNCTION="P-"/>
+   <pfstatus_set STATUS="S0100" FUNCTION="P--"/>
+   <pfstatus_set STATUS="S0100" FUNCTION="PICK"/>
+   <pfstatus_set STATUS="S0100" FUNCTION="PRI"/>
+   <pfstatus_set STATUS="S0100" FUNCTION="RW"/>
+   <pfstatus_doc OBJ_TYPE="A" OBJ_CODE="000001" MODAL="D" INT_NOTE="Line Selection List"/>
+   <pfstatus_doc OBJ_TYPE="P" OBJ_CODE="000001" MODAL="D" INT_NOTE="Line Selection List"/>
+   <pfstatus_doc OBJ_TYPE="B" OBJ_CODE="000001" SUB_CODE="0001" MODAL="D" INT_NOTE="Line Selection List"/>
+   <pfstatus_tit CODE="T0010" TEXT="Transport Organizer"/>
+   <pfstatus_tit CODE="T0100" TEXT="Transport Organizer"/>
+  </pfstatus>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp; Report  ZTRMANAGER
+*&amp;
+*&amp;---------------------------------------------------------------------*
+*&amp;
+*&amp;
+*&amp;---------------------------------------------------------------------*
+
+REPORT ztrmanager.
+
+INCLUDE ztrmanager_def.
+INCLUDE ztrmanager_cls.
+INCLUDE ztrmanager_pbo.
+INCLUDE ztrmanager_pai.
+
+START-OF-SELECTION.
+
+  CREATE OBJECT go_prog.
+
+  go_prog-&gt;start( ).</source>
+ </PROG>
+ <PROG NAME="ZTRMANAGER_DEF" VARCL="X" SUBC="I" RMAND="800" RLOAD="E" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="Include ZTRMANAGER_DEF" LENGTH="22 "/>
+   </language>
+  </textPool>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp;  Include           ZTRMANAGER_DEF
+*&amp;---------------------------------------------------------------------*
+
+INCLUDE &lt;icon&gt;.
+INCLUDE cts_inc_select_release_date.
+
+CLASS lcl_main DEFINITION DEFERRED.
+
+TABLES: trdyse01cm.
+
+DATA go_prog       TYPE REF TO lcl_main.
+DATA gv_okcode     TYPE syucomm.
+
+DATA gv_datseltext TYPE trdatselt.
+DATA gv_date       TYPE gkday.</source>
+ </PROG>
+ <PROG NAME="ZTRMANAGER_PBO" VARCL="X" SUBC="I" RMAND="800" RLOAD="E" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="Include ZTRMANAGER_PBO" LENGTH="22 "/>
+   </language>
+  </textPool>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp;  Include           ZTRMANAGER_PBO
+*&amp;---------------------------------------------------------------------*
+*&amp;---------------------------------------------------------------------*
+*&amp;      Module  STATUS_0100  OUTPUT
+*&amp;---------------------------------------------------------------------*
+*       text
+*----------------------------------------------------------------------*
+MODULE status_0100 OUTPUT.
+  SET PF-STATUS &apos;S0100&apos;.
+  SET TITLEBAR &apos;T0100&apos;.
+
+  go_prog-&gt;status_0100( ).
+
+ENDMODULE.                 &quot; STATUS_0100  OUTPUT
+*&amp;---------------------------------------------------------------------*
+*&amp;      Module  INIT_SCREEN_0010  OUTPUT
+*&amp;---------------------------------------------------------------------*
+MODULE init_screen_0010 OUTPUT.
+  go_prog-&gt;init_trans_0010( ).
+ENDMODULE.                             &quot; INIT_SCREEN_0010  OUTPUT
+*&amp;---------------------------------------------------------------------*
+*&amp;      Module  SET_SCREEN_0010  OUTPUT
+*&amp;---------------------------------------------------------------------*
+*       text
+*----------------------------------------------------------------------*
+MODULE set_screen_0010 OUTPUT.
+  IF trdyse01cm-sel_rele = &apos; &apos;.
+    LOOP AT SCREEN.
+      CASE screen-group1.
+        WHEN &apos;ONE&apos;.
+          screen-input = 0. MODIFY SCREEN.
+      ENDCASE.
+    ENDLOOP.
+  ELSE.
+    LOOP AT SCREEN.
+      CASE screen-group1.
+        WHEN &apos;ONE&apos;.
+          screen-input = 1. MODIFY SCREEN.
+      ENDCASE.
+    ENDLOOP.
+  ENDIF.
+ENDMODULE.                 &quot; SET_SCREEN_0010  OUTPUT
+
+*&amp;---------------------------------------------------------------------*
+*&amp;      Module  CHECK_USERNAME  INPUT
+*&amp;---------------------------------------------------------------------*
+MODULE check_username INPUT.
+  go_prog-&gt;check_username( ).
+ENDMODULE.                             &quot; CHECK_USERNAME  INPUT
+*&amp;---------------------------------------------------------------------*
+*&amp;      Module  check_status_trans   INPUT
+*&amp;---------------------------------------------------------------------*
+MODULE check_status_trans  INPUT.
+  IF gv_okcode = &apos;CONTINUE&apos;.
+*     ...check if at least one request status is selected
+    IF  trdyse01cm-sel_chan = space
+    AND trdyse01cm-sel_rele = space.
+      MESSAGE e655(tk).
+    ENDIF.
+  ENDIF.
+ENDMODULE.                             &quot; check_status_trans   INPUT
+
+*&amp;---------------------------------------------------------------------*
+*&amp;      Module  CHECK_TYPES_TRANS        INPUT
+*&amp;---------------------------------------------------------------------*
+MODULE check_types_trans INPUT.
+  IF gv_okcode = &apos;CONTINUE&apos;.
+*     Check if at least one request type is selected
+    IF  trdyse01cm-req_cust = space
+    AND trdyse01cm-req_wb   = space
+    AND trdyse01cm-req_cop  = space
+    AND trdyse01cm-req_move = space.
+      MESSAGE e673(tk).
+    ENDIF.
+  ENDIF.
+ENDMODULE.                             &quot; CHECK_TYPES_TRANS  INPUT
+
+*&amp;---------------------------------------------------------------------*
+*&amp;      Module  CHECK_DATE_TRANS INPUT
+*&amp;---------------------------------------------------------------------*
+MODULE check_date_trans INPUT.
+  IF gv_okcode = &apos;CONTINUE&apos;.
+    trdyse01cm-since_date = gv_date.
+
+    IF NOT trdyse01cm-since_date IS INITIAL
+    AND    trdyse01cm-since_date &gt; sy-datum.
+      MESSAGE w000(to) WITH text-m01.
+    ENDIF.
+
+  ENDIF.
+ENDMODULE.                    &quot;check_date_trans INPUT</source>
+ </PROG>
+ <PROG NAME="ZTRMANAGER_CLS" VARCL="X" SUBC="I" RMAND="800" RLOAD="E" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="Include ZTRMANAGER_CLS" LENGTH="22 "/>
+   </language>
+  </textPool>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp;  Include           ZTRMANAGER_CLS
+*&amp;---------------------------------------------------------------------*
+
+*----------------------------------------------------------------------*
+*       CLASS lcl_main DEFINITION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS lcl_main DEFINITION.
+
+  PUBLIC SECTION.
+
+    TYPES:BEGIN OF ts_files,
+      filename    TYPE string,
+      filecontent TYPE xstring,
+    END OF ts_files,
+    tt_files TYPE STANDARD TABLE OF ts_files WITH DEFAULT KEY.
+
+    TYPES:BEGIN OF ts_files_upload,
+      trkorr            TYPE trkorr,
+      cofiles_name      TYPE string,
+      data_name         TYPE string,
+      cofiles_content_x TYPE xstring,
+      data_content_x    TYPE xstring,
+    END OF ts_files_upload,
+    tt_files_upload TYPE STANDARD TABLE OF ts_files_upload WITH DEFAULT KEY.
+
+    TYPES: BEGIN OF ts_requests,
+        request_type    TYPE snodetext-name,
+        system          TYPE snodetext-text,
+        modifiable      TYPE snodetext-name,
+        request_number  TYPE snodetext-name,
+        request_owner   TYPE snodetext-name,
+        description     TYPE snodetext-text,
+        i_celltype      TYPE salv_t_int4_column,
+      END OF ts_requests.
+    TYPES: tt_requests TYPE STANDARD TABLE OF ts_requests.
+
+    DATA mv_continue TYPE abap_bool READ-ONLY.
+
+    METHODS on_hotspot
+      FOR EVENT link_click OF cl_salv_events_table
+        IMPORTING row column .
+
+    METHODS on_user_command
+      FOR EVENT added_function OF cl_salv_events_table
+        IMPORTING e_salv_function.
+
+    METHODS save_settings_0010.
+
+    METHODS start.
+
+    METHODS init_trans_0010.
+
+    METHODS date_help_0010.
+
+    METHODS check_username.
+
+    METHODS download_selected_trkorrs.
+
+    METHODS upload_trkorrs.
+
+    METHODS release_trkorrs.
+
+    METHODS upload_trkorrs_from_zip.
+
+    METHODS upload_trkorrs_from_folder.
+
+    METHODS load_data.
+
+    METHODS status_0100.
+
+    METHODS user_command_0010.
+
+    METHODS user_command_0100.
+
+    METHODS change_request_download
+      IMPORTING
+        !iv_cr_cofiles   TYPE string
+        !iv_cr_data      TYPE string
+      EXPORTING
+        !ev_cr_cofiles_x TYPE xstring
+        !ev_cr_data_x    TYPE xstring.
+
+    METHODS change_request_upload
+      IMPORTING
+        !iv_cr_cofiles   TYPE string
+        !iv_cr_data      TYPE string
+        !iv_cr_cofiles_x TYPE xstring
+        !iv_cr_data_x    TYPE xstring.
+
+    METHODS xstring_download_from_abap
+      IMPORTING
+        !iv_fullpath TYPE string
+      EXPORTING
+        !ev_xstring TYPE xstring .
+
+    METHODS xstring_upload_to_abap
+      IMPORTING
+        !iv_fullpath TYPE string
+        !iv_xstring  TYPE xstring .
+
+  PRIVATE SECTION.
+
+    DATA mt_requests            TYPE tt_requests.
+
+    DATA mo_container           TYPE REF TO cl_gui_splitter_container.
+    DATA mo_salv                TYPE REF TO cl_salv_table.
+
+    DATA mv_first_time          TYPE trboolean VALUE abap_true.
+
+    DATA mo_date_sel_0010       TYPE REF TO date_selection.
+    DATA ms_settings            TYPE ctsusrcust.
+
+    METHODS fill_selections
+      RETURNING
+        value(rt_selections) TYPE trwbo_selections.
+
+ENDCLASS.                    &quot;lcl_main DEFINITION
+
+*----------------------------------------------------------------------*
+*       CLASS lcl_main IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS lcl_main IMPLEMENTATION.
+  METHOD fill_selections.
+    DATA ls_selection    TYPE trwbo_selection.
+
+    DATA lv_system_name  TYPE sy-sysid.
+    DATA lv_system_type  TYPE sy-sysid.
+
+    DATA lv_sys_pattern  TYPE e070-trkorr.
+
+    CLEAR rt_selections.
+
+    ls_selection-trkorrpattern = space.
+    IF trdyse01cm-sel_all_cl  = &apos;X&apos;.
+      ls_selection-client      = space.
+    ELSE.
+      ls_selection-client      = sy-mandt.
+    ENDIF.
+
+    ls_selection-stdrequest    = space.
+    ls_selection-connect_req_task_conditions = &apos;X&apos;.
+
+* Types of requests
+    IF trdyse01cm-req_wb = &apos;X&apos;.
+      ls_selection-reqfunctions(1)     = sctsc_type_workbench.
+    ENDIF.
+    IF trdyse01cm-req_cust = &apos;X&apos;.
+      ls_selection-reqfunctions+1(1)   = sctsc_type_customizing.
+    ENDIF.
+    IF trdyse01cm-req_cop = &apos;X&apos;.
+      ls_selection-reqfunctions+2(1)   = sctsc_type_transport.
+    ENDIF.
+    IF trdyse01cm-req_move = &apos;X&apos;.
+      ls_selection-reqfunctions+3(3)   = sctsc_types_relocations.
+    ENDIF.
+    CONDENSE ls_selection-reqfunctions NO-GAPS.
+
+* Types of assigned tasks
+    ls_selection-taskfunctions      = sctsc_types_tasks.
+
+* Status of tasks
+    IF trdyse01cm-sel_rt_icr = &apos; &apos;.
+*   Don&apos;t select released tasks in unreleased requests
+      IF trdyse01cm-sel_chan = &apos;X&apos;.
+        ls_selection-taskstatus(1)     = sctsc_state_protected.
+        ls_selection-taskstatus+1(1)   = sctsc_state_changeable.
+      ENDIF.
+
+      IF trdyse01cm-sel_rele = &apos;X&apos;.
+        ls_selection-taskstatus+2(1)   = sctsc_state_released.
+        ls_selection-taskstatus+3(1)   = sctsc_state_notconfirmed.
+      ENDIF.
+      ls_selection-taskstatus+4(1)     = sctsc_state_export_started.
+
+*   Free tasks are handled like tasks in requests
+      ls_selection-singletasks         = &apos;X&apos;.
+      ls_selection-freetasks_f         = ls_selection-taskfunctions.
+      ls_selection-freetasks_s         = ls_selection-taskstatus.
+
+    ELSE.
+*   Select also released tasks in unreleased requests
+      ls_selection-taskstatus      = sctsc_states_all.
+
+*   Free tasks are handled like requests
+      ls_selection-singletasks       = &apos;X&apos;.
+      ls_selection-freetasks_f       = ls_selection-taskfunctions.
+
+*   Status of free tasks (&apos;OPEN&apos; always)
+      IF trdyse01cm-sel_chan = &apos;X&apos;.
+        ls_selection-freetasks_s(1)   = sctsc_state_protected.
+        ls_selection-freetasks_s+1(1) = sctsc_state_changeable.
+      ENDIF.
+      IF trdyse01cm-sel_rele = &apos;X&apos;.
+        ls_selection-freetasks_s+2(1) = sctsc_state_released.
+        ls_selection-freetasks_s+3(1) = sctsc_state_notconfirmed.
+      ENDIF.
+      ls_selection-freetasks_s+4(1)    = sctsc_state_export_started.
+    ENDIF.
+
+
+* Status of requests
+    IF  trdyse01cm-sel_chan = &apos;X&apos;
+    AND trdyse01cm-sel_rele = &apos; &apos;.
+      ls_selection-reqstatus(1)   = sctsc_state_protected.
+      ls_selection-reqstatus+1(1) = sctsc_state_changeable.
+      ls_selection-reqstatus+2(1) = sctsc_state_export_started.
+      APPEND ls_selection TO rt_selections.
+
+    ELSEIF trdyse01cm-sel_chan = &apos; &apos;
+    AND    trdyse01cm-sel_rele = &apos;X&apos;.
+      ls_selection-reqstatus(1)   = sctsc_state_released.
+      ls_selection-reqstatus+1(1) = sctsc_state_export_started.
+
+      IF NOT trdyse01cm-since_date IS INITIAL.
+        ls_selection-fromdate = trdyse01cm-since_date.
+        ls_selection-todate   = sy-datum.
+      ENDIF.
+      APPEND ls_selection TO rt_selections.
+
+    ELSEIF trdyse01cm-sel_chan = &apos;X&apos;
+    AND    trdyse01cm-sel_rele = &apos;X&apos;.
+      IF trdyse01cm-since_date IS INITIAL.
+        ls_selection-reqstatus      = sctsc_states_all.
+        APPEND ls_selection TO rt_selections.
+      ELSE.
+        ls_selection-reqstatus(1)   = sctsc_state_protected.
+        ls_selection-reqstatus+1(1) = sctsc_state_changeable.
+        ls_selection-reqstatus+2(1) = sctsc_state_export_started.
+        ls_selection-freetasks_s    = ls_selection-reqstatus.
+        APPEND ls_selection TO rt_selections.
+
+        ls_selection-taskstatus     = sctsc_state_released.
+        ls_selection-reqstatus      = sctsc_state_released.
+        ls_selection-freetasks_s    = ls_selection-reqstatus.
+        ls_selection-fromdate       = trdyse01cm-since_date.
+        ls_selection-todate         = sy-datum.
+        APPEND ls_selection TO rt_selections.
+      ENDIF.
+    ENDIF.
+
+    CALL FUNCTION &apos;TR_SYS_PARAMS&apos;
+      IMPORTING
+        systemname = lv_system_name
+        systemtype = lv_system_type.
+
+    lv_sys_pattern(3)    = lv_system_name(3).
+    lv_sys_pattern+3(1)  = &apos;%&apos;.
+
+    LOOP AT rt_selections INTO ls_selection.
+      IF  ls_selection-trkorrpattern = space
+      AND ls_selection-reqfunctions NA &apos;FDP&apos;.
+        ls_selection-trkorrpattern = lv_sys_pattern.
+        MODIFY rt_selections FROM ls_selection.
+      ENDIF.
+    ENDLOOP.
+
+  ENDMETHOD.                    &quot;fill_selections
+
+  METHOD check_username.
+
+    IF gv_okcode = &apos;CONTINUE&apos;.
+
+      IF trdyse01cm-username = space.
+        MESSAGE e652(tk).
+
+      ELSEIF    trdyse01cm-username &lt;&gt; sy-uname
+        AND NOT trdyse01cm-username CA &apos;*&apos;.
+
+        SHIFT trdyse01cm-username LEFT DELETING LEADING space.
+
+        CALL FUNCTION &apos;TR_USER_EXISTS&apos;
+          EXPORTING
+            bname           = trdyse01cm-username
+          EXCEPTIONS
+            user_dont_exist = 01
+            user_exists     = 02.
+
+        IF sy-subrc = 1.
+          MESSAGE w809(tr) WITH trdyse01cm-username.
+        ENDIF.
+
+      ENDIF.
+
+    ENDIF.
+
+  ENDMETHOD.                    &quot;check_username
+
+  METHOD date_help_0010.
+    DATA: lt_texts    TYPE tt_texts.
+
+    CALL METHOD mo_date_sel_0010-&gt;get_all_texts
+      IMPORTING
+        et_texts = lt_texts.
+
+    CALL FUNCTION &apos;F4IF_INT_TABLE_VALUE_REQUEST&apos;
+      EXPORTING
+        retfield        = &apos;T&apos;
+        dynpprog        = &apos;ZTRMANAGER&apos;
+        dynpnr          = &apos;0010&apos;
+        dynprofield     = &apos;GV_DATSELTEXT&apos;
+        value_org       = &apos;S&apos;
+      TABLES
+        value_tab       = lt_texts
+      EXCEPTIONS
+        parameter_error = 1
+        no_values_found = 2.
+    IF sy-subrc &lt;&gt; 0.
+      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+              WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+    ENDIF.
+  ENDMETHOD.                    &quot;date_help_0010
+
+  METHOD load_data.
+
+    DATA lt_celltype            TYPE salv_t_int4_column.
+    DATA ls_celltype            LIKE LINE OF lt_celltype.
+
+    DATA ls_requests            LIKE LINE OF mt_requests.
+    DATA lt_selections          TYPE trwbo_selections.
+
+    DATA ls_selection           LIKE LINE OF lt_selections.
+    DATA lv_username            LIKE sy-uname.
+
+    DATA lt_request_headers_tmp TYPE trwbo_request_headers.
+    DATA lt_request_headers     TYPE trwbo_request_headers.
+    DATA ls_request_header      TYPE trwbo_request_header.
+
+    CLEAR mt_requests.
+
+    lt_selections = fill_selections( ).
+
+    lv_username = trdyse01cm-username.
+
+    LOOP AT lt_selections INTO ls_selection.
+
+      CALL FUNCTION &apos;TRINT_SELECT_REQUESTS&apos;
+        EXPORTING
+          iv_username_pattern  = lv_username
+          is_selection         = ls_selection
+          iv_complete_projects = &apos;X&apos;
+        IMPORTING
+          et_requests          = lt_request_headers_tmp.
+
+      APPEND LINES OF lt_request_headers_tmp TO lt_request_headers.
+
+    ENDLOOP.
+
+    LOOP AT lt_request_headers INTO ls_request_header.
+      CLEAR ls_requests.
+
+      IF ls_request_header-trfunction = &apos;K&apos;.
+        ls_requests-request_type = &apos;Workbench&apos;.
+      ELSEIF ls_request_header-trfunction = &apos;W&apos;.
+        ls_requests-request_type = &apos;Customizing&apos;.
+      ENDIF.
+
+      IF ls_request_header-tarsystem IS INITIAL.
+        ls_requests-system = `Local Change Requests`.
+      ELSE.
+        ls_requests-system = `-&gt; ` &amp;&amp; ls_request_header-tarsystem.
+      ENDIF.
+
+      IF ls_request_header-trstatus = &apos;D&apos;.
+        ls_requests-modifiable    = `Modifiable`.
+      ELSEIF ls_request_header-trstatus = &apos;R&apos;.
+        ls_requests-modifiable    = `Released`.
+      ENDIF.
+
+      ls_requests-request_number = ls_request_header-trkorr.
+      IF ls_request_header-strkorr IS NOT INITIAL.
+        ls_requests-request_number = `+` &amp;&amp; ls_requests-request_number.
+        CONTINUE.
+      ENDIF.
+
+      ls_requests-request_owner  = ls_request_header-as4user.
+      ls_requests-description    = ls_request_header-as4text.
+
+      ls_celltype-columnname = &apos;REQUEST_NUMBER&apos;.
+      ls_celltype-value      = if_salv_c_cell_type=&gt;hotspot.
+      APPEND ls_celltype TO ls_requests-i_celltype.
+
+      APPEND ls_requests TO mt_requests[].
+    ENDLOOP.
+
+    SORT mt_requests BY request_type   DESCENDING
+                        system         DESCENDING
+                        modifiable
+                        request_number DESCENDING.
+  ENDMETHOD.                    &quot;load_data
+
+  METHOD on_user_command.
+
+    CASE e_salv_function.
+      WHEN &apos;DOWNLOAD&apos;.
+        me-&gt;download_selected_trkorrs( ).
+
+      WHEN &apos;UPLOAD&apos;.
+        me-&gt;upload_trkorrs( ).
+
+      WHEN &apos;RELEASE&apos;.
+        me-&gt;release_trkorrs( ).
+
+      WHEN &apos;REFRESH&apos;.
+        me-&gt;load_data( ).
+
+    ENDCASE.
+
+  ENDMETHOD.                    &quot;on_user_command
+
+  METHOD save_settings_0010.
+    IF ms_settings-username   &lt;&gt; trdyse01cm-username
+    OR ms_settings-req_cust   &lt;&gt; trdyse01cm-req_cust
+    OR ms_settings-req_wb     &lt;&gt; trdyse01cm-req_wb
+    OR ms_settings-req_cop    &lt;&gt; trdyse01cm-req_cop
+    OR ms_settings-req_move   &lt;&gt; trdyse01cm-req_move
+    OR ms_settings-sel_chan   &lt;&gt; trdyse01cm-sel_chan
+    OR ms_settings-sel_rele   &lt;&gt; trdyse01cm-sel_rele
+    OR ms_settings-since_date &lt;&gt; trdyse01cm-since_date
+    OR ms_settings-sel_rt_icr &lt;&gt; trdyse01cm-sel_rt_icr
+    OR ms_settings-sel_all_cl &lt;&gt; trdyse01cm-sel_all_cl.
+
+      IF trdyse01cm-username = &apos;*&apos;.
+        ms_settings-username   = trdyse01cm-username.
+      ELSE.
+        ms_settings-username   = sy-uname.
+      ENDIF.
+
+      ms_settings-req_cust   = trdyse01cm-req_cust.
+      ms_settings-req_wb     = trdyse01cm-req_wb.
+      ms_settings-req_cop    = trdyse01cm-req_cop.
+      ms_settings-req_move   = trdyse01cm-req_move.
+      ms_settings-sel_chan   = trdyse01cm-sel_chan.
+      ms_settings-sel_rele   = trdyse01cm-sel_rele.
+      ms_settings-since_date = trdyse01cm-since_date.
+      ms_settings-sel_rt_icr = trdyse01cm-sel_rt_icr.
+      ms_settings-sel_all_cl = trdyse01cm-sel_all_cl.
+
+      CALL FUNCTION &apos;TRINT_SAVE_USER_CUSTOMIZING&apos;
+        CHANGING
+          cs_settings = ms_settings.
+
+    ENDIF.
+  ENDMETHOD.                    &quot;save_settings_0010
+
+  METHOD start.
+
+    CALL SCREEN 0010.
+
+  ENDMETHOD.                    &quot;start
+
+  METHOD init_trans_0010.
+
+    SET PF-STATUS &apos;S0010&apos;.
+    SET TITLEBAR  &apos;T0010&apos;.
+
+    DATA ls_settings      TYPE ctsusrcust.
+    DATA lv_code          TYPE sydatum.
+
+    IF mv_first_time = abap_true.
+      mv_first_time = abap_false.
+
+*     Read user settings
+      CALL FUNCTION &apos;TRINT_READ_USER_CUSTOMIZING&apos;
+        IMPORTING
+          es_settings = ls_settings.
+
+      CLEAR: trdyse01cm.
+      MOVE-CORRESPONDING ls_settings TO trdyse01cm.
+
+      CREATE OBJECT mo_date_sel_0010.
+      lv_code = trdyse01cm-since_date.
+
+      CALL METHOD mo_date_sel_0010-&gt;get_text_from_code
+        EXPORTING
+          iv_code = lv_code
+        IMPORTING
+          ev_date = gv_date
+          ev_text = gv_datseltext.
+    ENDIF.
+
+  ENDMETHOD.                    &quot;init_trans_0010
+
+  METHOD download_selected_trkorrs.
+
+    DATA lv_message       TYPE string.
+
+    DATA lt_sel_rows      TYPE salv_t_row.
+    DATA lv_sel_rows      LIKE LINE OF lt_sel_rows.
+
+    DATA lt_reqs          TYPE STANDARD TABLE OF trkorr.
+    DATA lv_req           LIKE LINE OF lt_reqs.
+    DATA lv_dir           TYPE string.
+    DATA lv_sdir          TYPE string.
+    DATA lv_tdir          TYPE text80.
+
+    DATA lv_cr_data       TYPE string.
+    DATA lv_cr_cofiles    TYPE string.
+
+    DATA lv_cr_data_x     TYPE xstring.
+    DATA lv_cr_cofiles_x  TYPE xstring.
+
+    DATA lt_files         TYPE tt_files.
+    DATA ls_file          LIKE LINE OF lt_files.
+    DATA lv_rc            TYPE i.
+
+    DATA ls_requests      LIKE LINE OF mt_requests.
+
+    lt_sel_rows = me-&gt;mo_salv-&gt;get_selections( )-&gt;get_selected_rows( ).
+
+    LOOP AT lt_sel_rows INTO lv_sel_rows.
+      READ TABLE mt_requests INTO ls_requests
+        INDEX lv_sel_rows.
+
+      IF ls_requests-modifiable = &apos;Modifiable&apos;.
+        MESSAGE &apos;Selection contains modifiable requests. Release them first.&apos; TYPE &apos;S&apos; DISPLAY LIKE &apos;E&apos;.
+        RETURN.
+      ENDIF.
+
+      APPEND ls_requests-request_number TO lt_reqs[].
+
+    ENDLOOP.
+
+    IF lt_reqs IS NOT INITIAL.
+
+      cl_gui_frontend_services=&gt;get_desktop_directory(
+        CHANGING
+          desktop_directory    = lv_dir    &quot; Desktop Directory
+        EXCEPTIONS
+          cntl_error           = 1
+          error_no_gui         = 2
+          not_supported_by_gui = 3
+*             others               = 4
+      ).
+
+      cl_gui_cfw=&gt;flush( ).
+
+      cl_gui_frontend_services=&gt;directory_browse(
+        EXPORTING
+          window_title         = &apos;Select folder to download change requests&apos;    &quot; Title of Browsing Window
+          initial_folder       = lv_dir    &quot; Start Browsing Here
+        CHANGING
+          selected_folder      = lv_sdir    &quot; Folder Selected By User
+*       EXCEPTIONS
+*         cntl_error           = 1
+*         error_no_gui         = 2
+*         not_supported_by_gui = 3
+*         others               = 4
+      ).
+
+      CHECK lv_sdir IS NOT INITIAL.
+
+      LOOP AT lt_reqs INTO lv_req.
+
+        lv_tdir = lv_sdir.
+
+        CONCATENATE &apos;R&apos; lv_req+4 &apos;.&apos; lv_req(3) INTO lv_cr_data.
+        CONCATENATE &apos;K&apos; lv_req+4 &apos;.&apos; lv_req(3) INTO lv_cr_cofiles.
+
+        me-&gt;change_request_download( EXPORTING iv_cr_cofiles   = lv_cr_cofiles
+                                               iv_cr_data      = lv_cr_data
+                                     IMPORTING ev_cr_cofiles_x = lv_cr_cofiles_x
+                                               ev_cr_data_x    = lv_cr_data_x ).
+
+        ls_file-filename    = lv_cr_data.
+        ls_file-filecontent = lv_cr_data_x.
+        APPEND ls_file TO lt_files[].
+
+        ls_file-filename    = lv_cr_cofiles.
+        ls_file-filecontent = lv_cr_cofiles_x.
+        APPEND ls_file TO lt_files[].
+
+      ENDLOOP.
+
+      DATA lo_zip       TYPE REF TO cl_abap_zip.
+      DATA lv_filename  TYPE trkorr.
+      DATA lv_extension TYPE trkorr.
+      DATA lv_cr        TYPE trkorr.
+      DATA lv_path      TYPE string.
+
+      CREATE OBJECT lo_zip.
+
+      LOOP AT lt_files INTO ls_file.
+
+        SPLIT ls_file-filename AT &apos;.&apos; INTO lv_filename lv_extension.
+        IF lv_filename(1) = &apos;R&apos;.
+          lv_filename(1) = &apos;K&apos;.
+        ENDIF.
+
+        CONCATENATE lv_extension lv_filename INTO lv_cr.
+
+        READ TABLE mt_requests INTO ls_requests
+          WITH KEY request_number = lv_cr.
+
+        IF sy-subrc EQ 0.
+          CONCATENATE ls_requests-request_number ` - ` ls_requests-description `\` ls_file-filename INTO lv_path.
+        ELSE.
+          lv_path = ls_file-filename.
+        ENDIF.
+
+        lo_zip-&gt;add(
+          EXPORTING
+            name    = lv_path    &quot; Name (Case-Sensitive)
+            content = ls_file-filecontent
+        ).
+
+      ENDLOOP.
+
+      TRY .
+
+          cl_xlft_gui_utils=&gt;write_file(
+            EXPORTING
+              filename = lv_sdir &amp;&amp; &apos;\&apos; &amp;&amp; &apos;ChangeRequests.zip&apos;
+              data     = lo_zip-&gt;save( )
+          ).
+
+
+          CONCATENATE
+            `File `
+            lv_sdir
+            `\ChangeRequests.zip is downloaded to client PC` INTO lv_message.
+          MESSAGE lv_message TYPE &apos;S&apos;.
+
+        CATCH cx_xlft_gui_exception.
+
+          CONCATENATE
+            `Could not download file `
+            lv_sdir
+            `\ChangeRequests.zip to client PC` INTO lv_message.
+          MESSAGE lv_message TYPE &apos;S&apos; DISPLAY LIKE &apos;E&apos;.
+
+
+      ENDTRY.
+
+    ENDIF.
+  ENDMETHOD.                    &quot;download_selected_trkorrs
+
+  METHOD on_hotspot.
+
+    DATA ls_requests LIKE LINE OF mt_requests.
+
+    READ TABLE mt_requests INTO ls_requests
+      INDEX row.
+
+    DATA lv_trkorr TYPE trkorr.
+
+    lv_trkorr = ls_requests-request_number.
+
+    CALL FUNCTION &apos;TR_PRESENT_REQUEST&apos;
+      EXPORTING
+        iv_trkorr    = lv_trkorr
+        iv_highlight = &apos;X&apos;.
+
+  ENDMETHOD.                    &quot;on_hotspot
+
+  METHOD status_0100.
+
+    DATA lo_aggr    TYPE REF TO cl_salv_aggregations.
+    DATA lo_groups  TYPE REF TO cl_salv_sorts .
+    DATA lo_event   TYPE REF TO cl_salv_events_table.
+
+    TRY .
+
+        IF mo_salv IS NOT BOUND.
+
+          CREATE OBJECT mo_container
+            EXPORTING
+              parent                  = cl_gui_custom_container=&gt;default_screen    &quot; Parent Container
+              rows                    = 1    &quot; Number of Rows to be displayed
+              columns                 = 1    &quot; Number of Columns to be Displayed
+*           EXCEPTIONS
+*             cntl_error              = 1
+*             cntl_system_error       = 2
+*             others                  = 3
+            .
+
+          cl_salv_table=&gt;factory(
+            EXPORTING
+*             list_display   = if_salv_c_bool_sap=&gt;false    &quot; ALV Displayed in List Mode
+              r_container    = mo_container-&gt;get_container( row = 1 column = 1 )
+              container_name = &apos;SALV_TABLE&apos;
+            IMPORTING
+              r_salv_table   = mo_salv     &quot; Basis Class Simple ALV Tables
+            CHANGING
+              t_table        = mt_requests
+          ).
+
+          mo_salv-&gt;get_columns( )-&gt;set_optimize( ).
+          mo_salv-&gt;get_functions( )-&gt;set_all( if_salv_c_bool_sap=&gt;true ).
+
+          mo_salv-&gt;get_functions( )-&gt;add_function(
+              name     = &apos;REFRESH&apos;
+              icon     = &apos;@42@&apos;
+              text     = &apos;Refresh&apos;
+              tooltip  = &apos;Refresh&apos;
+              position = if_salv_c_function_position=&gt;left_of_salv_functions
+          ).
+
+          mo_salv-&gt;get_functions( )-&gt;add_function(
+              name     = &apos;DOWNLOAD&apos;
+              icon     = &apos;@MC@&apos;
+              text     = &apos;Download&apos;
+              tooltip  = &apos;Download&apos;
+              position = if_salv_c_function_position=&gt;left_of_salv_functions
+          ).
+
+          mo_salv-&gt;get_functions( )-&gt;add_function(
+              name     = &apos;UPLOAD&apos;
+              icon     = &apos;@M8@&apos;
+              text     = &apos;Upload&apos;
+              tooltip  = &apos;Upload&apos;
+              position = if_salv_c_function_position=&gt;left_of_salv_functions
+          ).
+
+          mo_salv-&gt;get_functions( )-&gt;add_function(
+              name     = &apos;RELEASE&apos;
+              icon     = &apos;@4A@&apos;
+              text     = &apos;Release&apos;
+              tooltip  = &apos;Release&apos;
+              position = if_salv_c_function_position=&gt;left_of_salv_functions
+          ).
+
+          mo_salv-&gt;get_selections( )-&gt;set_selection_mode( if_salv_c_selection_mode=&gt;cell ).
+
+          mo_salv-&gt;get_columns( )-&gt;set_cell_type_column( &apos;I_CELLTYPE&apos; ).
+
+          lo_aggr = mo_salv-&gt;get_aggregations( ).
+          lo_aggr-&gt;clear( ).
+
+          lo_groups = mo_salv-&gt;get_sorts( ) .
+          lo_groups-&gt;clear( ).
+
+          lo_groups-&gt;add_sort(
+            columnname = &apos;REQUEST_TYPE&apos;
+            position   = 1
+            subtotal   = abap_false
+            sequence   = if_salv_c_sort=&gt;sort_down ).
+
+          lo_groups-&gt;add_sort(
+            columnname = &apos;SYSTEM&apos;
+            position   = 2
+            subtotal   = abap_false
+            sequence   = if_salv_c_sort=&gt;sort_down ).
+
+          lo_groups-&gt;add_sort(
+            columnname = &apos;MODIFIABLE&apos;
+            position   = 3
+            subtotal   = abap_false
+            sequence   = if_salv_c_sort=&gt;sort_up ).
+
+          lo_groups-&gt;add_sort(
+            columnname = &apos;REQUEST_NUMBER&apos;
+            position   = 4
+            subtotal   = abap_false
+            sequence   = if_salv_c_sort=&gt;sort_down ).
+
+          lo_event = mo_salv-&gt;get_event( ).
+
+          SET HANDLER me-&gt;on_hotspot FOR lo_event.
+          SET HANDLER me-&gt;on_user_command FOR lo_event.
+
+          mo_salv-&gt;display( ).
+
+        ELSE.
+
+          me-&gt;load_data( ).
+          mo_salv-&gt;refresh( ).
+
+        ENDIF.
+
+      CATCH cx_salv_msg
+            cx_salv_existing     &quot; ALV: General Error Class (Checked During Syntax Check)
+            cx_salv_wrong_call   &quot; ALV: General Error Class (Checked During Syntax Check)
+            cx_salv_data_error
+            cx_salv_not_found.
+        MESSAGE &apos;Error occured in ALV initialization.&apos; TYPE &apos;S&apos; DISPLAY LIKE &apos;E&apos;.
+    ENDTRY.
+
+  ENDMETHOD.                    &quot;status_0100
+
+  METHOD user_command_0100.
+
+    CASE gv_okcode.
+      WHEN &apos;BACK&apos; OR &apos;RW&apos;.
+        SET SCREEN 0.
+        LEAVE SCREEN.
+      WHEN &apos;%EX&apos;.
+        LEAVE PROGRAM.
+      WHEN &apos;CONTINUE&apos;.
+
+        go_prog-&gt;load_data( ).
+
+    ENDCASE.
+  ENDMETHOD.
+
+  METHOD user_command_0010.
+
+    CASE gv_okcode.
+      WHEN &apos;BACK&apos; OR &apos;RW&apos;.
+        SET SCREEN 0.
+        LEAVE SCREEN.
+      WHEN &apos;%EX&apos;.
+        LEAVE PROGRAM.
+      WHEN &apos;CONTINUE&apos;.
+
+        DATA lv_code TYPE sydatum.
+
+        mo_date_sel_0010-&gt;get_code_from_text( EXPORTING iv_text = gv_datseltext
+                                              IMPORTING ev_code = lv_code
+                                              CHANGING  cv_date = gv_date ).
+        trdyse01cm-since_date = lv_code.
+
+        go_prog-&gt;save_settings_0010( ).
+
+        trdyse01cm-since_date = gv_date.
+
+        go_prog-&gt;load_data( ).
+
+        CALL SCREEN 0100.
+
+      WHEN OTHERS.
+    ENDCASE.
+
+  ENDMETHOD.                    &quot;user_command_0100.
+
+  METHOD change_request_download.
+
+    DATA lv_trans_dirt   TYPE text255.
+    DATA lv_trans_dir    TYPE string.
+    DATA lv_sdir_sep     TYPE string.
+
+    DATA lv_cofiles_path TYPE string.
+    DATA lv_data_path    TYPE string.
+
+*   get name of directory with the error files
+    CALL &apos;C_SAPGPARAM&apos; ID &apos;NAME&apos;  FIELD &apos;DIR_TRANS&apos;
+                       ID &apos;VALUE&apos; FIELD lv_trans_dirt.
+
+    lv_trans_dir = lv_trans_dirt.
+
+    IF lv_trans_dir CS &apos;/&apos;.
+      lv_sdir_sep = &apos;/&apos;.
+    ELSE.
+      lv_sdir_sep = &apos;\&apos;.
+    ENDIF.
+
+    CONCATENATE lv_trans_dir lv_sdir_sep &apos;cofiles&apos; lv_sdir_sep iv_cr_cofiles INTO lv_cofiles_path.
+    CONCATENATE lv_trans_dir lv_sdir_sep &apos;data&apos;    lv_sdir_sep iv_cr_data    INTO lv_data_path.
+
+    me-&gt;xstring_download_from_abap( EXPORTING iv_fullpath = lv_cofiles_path
+                                    IMPORTING ev_xstring  = ev_cr_cofiles_x ).
+
+    me-&gt;xstring_download_from_abap( EXPORTING iv_fullpath = lv_data_path
+                                    IMPORTING ev_xstring  = ev_cr_data_x ).
+
+  ENDMETHOD.                    &quot;change_request_download
+
+  METHOD xstring_upload_to_abap.
+
+    &quot; Stores a XSTRING as file on backend system
+
+    &quot; Message
+    DATA: lv_message   TYPE string.
+    DATA: lo_exception TYPE REF TO cx_sy_file_access_error. &quot;§953664
+
+
+    &quot; Open file for saving
+    TRY.
+        OPEN DATASET iv_fullpath
+          FOR OUTPUT
+          IN BINARY MODE
+          MESSAGE lv_message.
+
+        IF sy-subrc = 8.
+          MESSAGE lv_message TYPE &apos;E&apos;.
+        ENDIF.
+      CATCH cx_sy_file_access_error INTO lo_exception.      &quot;§953664
+        lv_message = lo_exception-&gt;get_text( ).
+        MESSAGE lv_message TYPE &apos;E&apos;.
+    ENDTRY.
+
+    &quot; Save data
+    TRY.
+        TRANSFER iv_xstring TO iv_fullpath.
+      CATCH cx_sy_file_access_error INTO lo_exception.      &quot;§953664
+        lv_message = lo_exception-&gt;get_text( ).
+        MESSAGE lv_message TYPE &apos;E&apos;.
+    ENDTRY.
+
+    &quot; Close file
+    TRY.
+        CLOSE DATASET iv_fullpath.
+      CATCH cx_sy_file_access_error INTO lo_exception.      &quot;§953664
+        lv_message = lo_exception-&gt;get_text( ).
+        MESSAGE lv_message TYPE &apos;E&apos;.
+    ENDTRY.
+
+  ENDMETHOD.                    &quot;xstring_upload_to_abap
+
+  METHOD xstring_download_from_abap.
+
+    &quot; Load a XSTRING from file on backend system
+
+    &quot; Message
+    DATA: lv_message   TYPE string.
+    DATA: lo_exception TYPE REF TO cx_sy_file_access_error. &quot;§953664
+
+
+    &quot; . Open file for loading
+    TRY.
+        OPEN DATASET iv_fullpath
+          FOR INPUT
+          IN BINARY MODE
+          MESSAGE lv_message.
+
+        IF sy-subrc = 8.
+          MESSAGE lv_message TYPE &apos;E&apos;.
+        ENDIF.
+      CATCH cx_sy_file_access_error INTO lo_exception.      &quot;§953664
+        lv_message = lo_exception-&gt;get_text( ).
+        MESSAGE lv_message TYPE &apos;E&apos;.
+    ENDTRY.
+
+    &quot; . Load data
+    TRY.
+        READ DATASET iv_fullpath INTO ev_xstring.
+      CATCH cx_sy_file_access_error INTO lo_exception.      &quot;§953664
+        lv_message = lo_exception-&gt;get_text( ).
+        MESSAGE lv_message TYPE &apos;E&apos;.
+    ENDTRY.
+
+    &quot; . Close file
+    TRY.
+        CLOSE DATASET iv_fullpath.
+      CATCH cx_sy_file_access_error INTO lo_exception.      &quot;§953664
+        lv_message = lo_exception-&gt;get_text( ).
+        MESSAGE lv_message TYPE &apos;E&apos;.
+    ENDTRY.
+
+  ENDMETHOD.                    &quot;xstring_download_from_abap
+
+  METHOD release_trkorrs.
+
+    DATA lt_sel_rows        TYPE salv_t_row.
+    DATA lv_sel_rows        LIKE LINE OF lt_sel_rows.
+
+    DATA lt_reqs            TYPE STANDARD TABLE OF trkorr.
+
+    DATA ls_requests        LIKE LINE OF mt_requests.
+
+    DATA ls_return          TYPE bapiret2.
+
+    FIELD-SYMBOLS &lt;lv_reqs&gt; LIKE LINE OF lt_reqs.
+
+    lt_sel_rows = me-&gt;mo_salv-&gt;get_selections( )-&gt;get_selected_rows( ).
+
+    LOOP AT lt_sel_rows INTO lv_sel_rows.
+      READ TABLE mt_requests INTO ls_requests
+        INDEX lv_sel_rows.
+
+      IF ls_requests-modifiable &lt;&gt; &apos;Modifiable&apos;.
+        MESSAGE &apos;Select only modifiable change requests.&apos; TYPE &apos;S&apos; DISPLAY LIKE &apos;E&apos;.
+        RETURN.
+      ENDIF.
+
+      APPEND ls_requests-request_number TO lt_reqs[].
+
+    ENDLOOP.
+
+    CHECK lt_reqs IS NOT INITIAL.
+
+    DATA ls_log     TYPE bal_s_log.
+    DATA ls_s_msg   TYPE bal_s_msg.
+    DATA ls_s_prof  TYPE bal_s_prof.
+    DATA lv_log_hnd TYPE balloghndl.
+
+    ls_log-aldate = sy-datum.
+    ls_log-altime = sy-uzeit.
+    ls_log-aluser = sy-uname.
+    ls_log-alprog = sy-repid.
+
+    CALL FUNCTION &apos;BAL_LOG_CREATE&apos;
+      EXPORTING
+        i_s_log                 = ls_log
+      IMPORTING
+        e_log_handle            = lv_log_hnd
+      EXCEPTIONS
+        log_header_inconsistent = 1
+*       OTHERS                  =                     2
+      .
+
+    LOOP AT lt_reqs ASSIGNING &lt;lv_reqs&gt;.
+
+      CALL FUNCTION &apos;BAPI_CTREQUEST_RELEASE&apos;
+        EXPORTING
+          requestid = &lt;lv_reqs&gt;
+          complete  = &apos;X&apos; &quot; Release request including tasks
+        IMPORTING
+          return    = ls_return.
+
+      IF ls_return-type IS NOT INITIAL.
+
+        ls_s_msg-msgid = ls_return-id.
+        ls_s_msg-msgty = ls_return-type.
+        ls_s_msg-msgno = ls_return-number.
+        ls_s_msg-msgv1 = ls_return-message_v1.
+        ls_s_msg-msgv2 = ls_return-message_v2.
+        ls_s_msg-msgv3 = ls_return-message_v3.
+        ls_s_msg-msgv4 = ls_return-message_v4.
+
+        CALL FUNCTION &apos;BAL_LOG_MSG_ADD&apos;
+          EXPORTING
+            i_log_handle     = lv_log_hnd
+            i_s_msg          = ls_s_msg
+          EXCEPTIONS
+            log_not_found    = 1
+            msg_inconsistent = 2
+            log_is_full      = 3
+            OTHERS           = 4.
+
+      ENDIF.
+
+    ENDLOOP.
+
+    CALL FUNCTION &apos;BAL_DSP_PROFILE_POPUP_GET&apos;
+      IMPORTING
+        e_s_display_profile = ls_s_prof.
+
+    CALL FUNCTION &apos;BAL_DSP_LOG_DISPLAY&apos;
+      EXPORTING
+        i_s_display_profile  = ls_s_prof
+      EXCEPTIONS
+        profile_inconsistent = 1
+        internal_error       = 2
+        no_data_available    = 3
+        no_authority         = 4
+        OTHERS               = 5.
+
+    CALL FUNCTION &apos;BAL_LOG_REFRESH&apos;
+      EXPORTING
+        i_log_handle  = lv_log_hnd
+      EXCEPTIONS
+        log_not_found = 1
+        OTHERS        = 2.
+
+  ENDMETHOD.                    &quot;release_trkorrs
+
+  METHOD upload_trkorrs.
+
+    DATA lv_answer TYPE char1.
+
+    CALL FUNCTION &apos;POPUP_TO_CONFIRM&apos;
+      EXPORTING
+        titlebar      = &apos;Choose transports location&apos;
+        text_question = &apos;Choose transports location (from ZIP file or from folder recursively)&apos;
+        text_button_1 = &apos;From ZIP&apos;
+        text_button_2 = &apos;From folder&apos;
+      IMPORTING
+        answer        = lv_answer.
+
+    CHECK lv_answer &lt;&gt; &apos;A&apos;.
+
+    CASE lv_answer.
+      WHEN &apos;1&apos;.
+        me-&gt;upload_trkorrs_from_zip( ).
+      WHEN &apos;2&apos;.
+        me-&gt;upload_trkorrs_from_folder( ).
+    ENDCASE.
+
+  ENDMETHOD.                    &quot;upload_trkorrs
+
+  METHOD upload_trkorrs_from_zip.
+
+    DATA: lt_file_table            TYPE filetable,
+          ls_file_table            LIKE LINE OF lt_file_table,
+          lv_num_of_files          TYPE i,
+          lv_path_separator        TYPE char1,
+          lv_zip_file_x            TYPE xstring,
+          lv_message               TYPE string,
+          lv_filename              TYPE string,
+
+          lo_zip                   TYPE REF TO cl_abap_zip,
+          lt_filepath_parts        TYPE string_table,
+
+          lv_extension             TYPE trkorr,
+          lv_cr                    TYPE trkorr,
+          lv_path                  TYPE trkorr,
+
+          lt_tr_files              TYPE tt_files_upload,
+
+          lv_tr_count TYPE char10.
+
+    FIELD-SYMBOLS: &lt;ls_file&gt;       TYPE cl_abap_zip=&gt;t_file.
+    FIELD-SYMBOLS: &lt;ls_tr_file&gt;    LIKE LINE OF lt_tr_files.
+
+    cl_gui_frontend_services=&gt;get_file_separator(
+      CHANGING
+        file_separator       = lv_path_separator
+      EXCEPTIONS
+        cntl_error           = 1
+        error_no_gui         = 2
+        not_supported_by_gui = 3
+        OTHERS               = 4
+    ).
+
+    cl_gui_frontend_services=&gt;file_open_dialog(
+      EXPORTING
+        window_title            = &apos;Choose transport ZIP file&apos;    &quot; Title Of File Open Dialog
+*       default_extension       =     &quot; Default Extension
+*       default_filename        =     &quot; Default File Name
+        file_filter             = &apos;*.zip|*.zip&apos;    &quot; File Extension Filter String
+*       with_encoding           =     &quot; File Encoding
+*       initial_directory       =     &quot; Initial Directory
+*       multiselection          =     &quot; Multiple selections poss.
+      CHANGING
+        file_table              = lt_file_table    &quot; Table Holding Selected Files
+        rc                      = lv_num_of_files    &quot; Return Code, Number of Files or -1 If Error Occurred
+*       user_action             =     &quot; User Action (See Class Constants ACTION_OK, ACTION_CANCEL)
+*       file_encoding           =
+*     EXCEPTIONS
+*       file_open_dialog_failed = 1
+*       cntl_error              = 2
+*       error_no_gui            = 3
+*       not_supported_by_gui    = 4
+*       others                  = 5
+    ).
+
+    CHECK lv_num_of_files = 1.
+
+    READ TABLE lt_file_table INTO ls_file_table INDEX 1.
+
+    TRY .
+
+        lv_filename   = ls_file_table-filename.
+        lv_zip_file_x = cl_xlft_gui_utils=&gt;read_file( lv_filename ).
+
+      CATCH cx_xlft_gui_exception.
+
+    ENDTRY.
+
+    IF lv_zip_file_x IS INITIAL.
+
+      CONCATENATE
+        `File `
+        lv_filename
+        ` not exists or no a valid ZIP achive` INTO lv_message.
+      MESSAGE lv_message TYPE &apos;S&apos; DISPLAY LIKE &apos;E&apos;.
+
+      RETURN.
+
+    ENDIF.
+
+    CREATE OBJECT lo_zip.
+
+    lo_zip-&gt;load(
+      EXPORTING
+        zip             = lv_zip_file_x
+      EXCEPTIONS
+        zip_parse_error = 1
+*       others          = 2
+    ).
+
+    IF sy-subrc NE 0.
+
+      CONCATENATE
+        `File `
+        lv_filename
+        ` not exists or no a valid ZIP achive` INTO lv_message.
+      MESSAGE lv_message TYPE &apos;S&apos; DISPLAY LIKE &apos;E&apos;.
+
+      RETURN.
+
+    ENDIF.
+
+    LOOP AT lo_zip-&gt;files ASSIGNING &lt;ls_file&gt;.
+
+      SPLIT &lt;ls_file&gt;-name AT lv_path_separator
+        INTO TABLE lt_filepath_parts.
+
+      IF sy-subrc EQ 0.
+        READ TABLE lt_filepath_parts INTO lv_filename
+          INDEX lines( lt_filepath_parts ).
+      ELSE.
+        lv_filename = &lt;ls_file&gt;-name.
+      ENDIF.
+
+      CHECK lv_filename(1) EQ &apos;R&apos;
+         OR lv_filename(1) EQ &apos;K&apos;.
+
+      SPLIT lv_filename AT &apos;.&apos; INTO lv_path lv_extension.
+      IF lv_path(1) = &apos;R&apos;.
+        lv_path(1) = &apos;K&apos;.
+      ENDIF.
+
+      CONCATENATE lv_extension lv_path INTO lv_cr.
+
+      READ TABLE lt_tr_files WITH KEY trkorr = lv_cr
+        ASSIGNING &lt;ls_tr_file&gt;.
+
+      IF sy-subrc NE 0.
+        APPEND INITIAL LINE TO lt_tr_files ASSIGNING &lt;ls_tr_file&gt;.
+        &lt;ls_tr_file&gt;-trkorr = lv_cr.
+      ENDIF.
+
+      CASE lv_filename(1).
+        WHEN &apos;R&apos;.
+
+          &lt;ls_tr_file&gt;-data_name = lv_filename.
+
+          lo_zip-&gt;get(
+            EXPORTING
+              name                    = &lt;ls_file&gt;-name
+*             index                   = 0
+            IMPORTING
+              content                 = &lt;ls_tr_file&gt;-data_content_x
+            EXCEPTIONS
+              zip_index_error         = 1
+              zip_decompression_error = 2
+*             others                  = 3
+          ).
+
+        WHEN &apos;K&apos;.
+
+          &lt;ls_tr_file&gt;-cofiles_name = lv_filename.
+
+          lo_zip-&gt;get(
+            EXPORTING
+              name                    = &lt;ls_file&gt;-name
+*             index                   = 0
+            IMPORTING
+              content                 = &lt;ls_tr_file&gt;-cofiles_content_x
+            EXCEPTIONS
+              zip_index_error         = 1
+              zip_decompression_error = 2
+*             others                  = 3
+          ).
+
+      ENDCASE.
+
+      IF sy-subrc &lt;&gt; 0.
+
+        CONCATENATE
+          `File `
+          ls_file_table-filename
+          ` not exists or no a valid ZIP achive` INTO lv_message.
+        MESSAGE lv_message TYPE &apos;S&apos; DISPLAY LIKE &apos;E&apos;.
+
+        RETURN.
+
+      ENDIF.
+
+    ENDLOOP.
+
+    LOOP AT lt_tr_files ASSIGNING &lt;ls_tr_file&gt;.
+
+      IF    &lt;ls_tr_file&gt;-data_content_x    IS INITIAL
+         OR &lt;ls_tr_file&gt;-cofiles_content_x IS INITIAL.
+
+        CONCATENATE
+          `File `
+          ls_file_table-filename
+          ` not exists or no a valid ZIP achive` INTO lv_message.
+        MESSAGE lv_message TYPE &apos;S&apos; DISPLAY LIKE &apos;E&apos;.
+
+        RETURN.
+
+      ENDIF.
+
+      me-&gt;change_request_upload(
+        EXPORTING
+          iv_cr_cofiles   = &lt;ls_tr_file&gt;-cofiles_name
+          iv_cr_data      = &lt;ls_tr_file&gt;-data_name
+          iv_cr_cofiles_x = &lt;ls_tr_file&gt;-cofiles_content_x
+          iv_cr_data_x    = &lt;ls_tr_file&gt;-data_content_x
+      ).
+
+    ENDLOOP.
+
+    lv_tr_count = lines( lt_tr_files ).
+
+    CONCATENATE
+      lv_tr_count
+      ` transport requests have been uploaded to the server` INTO lv_message.
+    MESSAGE lv_message TYPE &apos;S&apos;.
+
+  ENDMETHOD.                    &quot;upload_trkorrs_from_zip
+
+  METHOD upload_trkorrs_from_folder.
+
+  ENDMETHOD.                    &quot;upload_trkorrs_from_folder
+
+  METHOD change_request_upload.
+
+    DATA lv_trans_dirt   TYPE text255.
+    DATA lv_trans_dir    TYPE string.
+    DATA lv_sdir_sep     TYPE string.
+
+    DATA lv_cofiles_path TYPE string.
+    DATA lv_data_path    TYPE string.
+
+*   get name of directory with the error files
+    CALL &apos;C_SAPGPARAM&apos; ID &apos;NAME&apos;  FIELD &apos;DIR_TRANS&apos;
+                       ID &apos;VALUE&apos; FIELD lv_trans_dirt.
+
+    lv_trans_dir = lv_trans_dirt.
+
+    IF lv_trans_dir CS &apos;/&apos;.
+      lv_sdir_sep = &apos;/&apos;.
+    ELSE.
+      lv_sdir_sep = &apos;\&apos;.
+    ENDIF.
+
+    CONCATENATE lv_trans_dir lv_sdir_sep &apos;cofiles&apos; lv_sdir_sep iv_cr_cofiles INTO lv_cofiles_path.
+    CONCATENATE lv_trans_dir lv_sdir_sep &apos;data&apos;    lv_sdir_sep iv_cr_data    INTO lv_data_path.
+
+    me-&gt;xstring_upload_to_abap( EXPORTING iv_fullpath = lv_cofiles_path
+                                          iv_xstring  = iv_cr_cofiles_x ).
+
+    me-&gt;xstring_upload_to_abap( EXPORTING iv_fullpath = lv_data_path
+                                          iv_xstring  = iv_cr_data_x ).
+
+  ENDMETHOD.                    &quot;change_request_upload
+ENDCLASS.                    &quot;lcl_main IMPLEMENTATION</source>
+ </PROG>
+ <PROG NAME="ZTRMANAGER_PAI" VARCL="X" SUBC="I" RMAND="800" RLOAD="E" UCCHECK="X">
+  <textPool>
+   <language SPRAS="E">
+    <textElement ID="R" ENTRY="Include ZTRMANAGER_PAI" LENGTH="22 "/>
+   </language>
+  </textPool>
+  <source>*&amp;---------------------------------------------------------------------*
+*&amp;  Include           ZTRMANAGER_PAI
+*&amp;---------------------------------------------------------------------*
+*&amp;---------------------------------------------------------------------*
+*&amp;      Module  user_command_0010  INPUT
+*&amp;---------------------------------------------------------------------*
+*       text
+*----------------------------------------------------------------------*
+MODULE user_command_0010 INPUT.
+  go_prog-&gt;user_command_0010( ).
+ENDMODULE.                 &quot; user_command_0010  INPUT
+*&amp;---------------------------------------------------------------------*
+*&amp;      Module  user_command_0100  INPUT
+*&amp;---------------------------------------------------------------------*
+*       text
+*----------------------------------------------------------------------*
+MODULE user_command_0100 INPUT.
+  go_prog-&gt;user_command_0100( ).
+ENDMODULE.                 &quot; user_command_0100  INPUT*
+*&amp;---------------------------------------------------------------------*
+*&amp;      Module  date_help_0010  INPUT
+*&amp;---------------------------------------------------------------------*
+*       text
+*----------------------------------------------------------------------*
+MODULE date_help_0010 INPUT.
+  go_prog-&gt;date_help_0010( ).
+endmodule.                 &quot; date_help_0010  INPUT</source>
+ </PROG>
+</nugget>
